@@ -1,36 +1,48 @@
 <script>
-       function calculate(operation) {
-        var n1 = Number(document.getElementById("n1").value);
-        var n2 = Number(document.getElementById("n2").value);
-        var result = 0;
-        var message = "";
+        function add() 
+        {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var sum = num1 + num2;
+            printResult("The sum of " + num1 + " and " + num2 + " is " + sum + ".");
+        }
 
-       if (operation == '+') 
-       {
-        result = n1 + n2;
-        message = "The sum of " + n1 + " and " + n2 + " is " + result;
-       }
-       else if (operation == '-') 
-       {
-        result = n1 - n2;
-        message = "The difference of " + n1 + " and " + n2 + " is " + result;
-       } 
-       else if (operation == '*') 
-       {
-         result = n1 * n2;
-         message = "The product of " + n1 + " and " + n2 + " is " + result;
-       } 
-       else if (operation == '/')
-       {
-        result = n1 / n2;
-        message = "The quotient of " + n1 + " and " + n2 + " is " + result;
-       } 
-       else if (operation == '%') 
-       {
-        result = n1 % n2;
-        message = "The remainder of " + n1 + " and " + n2 + " is " + result;
-       }
+        function subtract() 
+        {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var diff = num1 - num2;
+            printResult("The difference of " + num1 + " and " + num2 + " is " + diff + ".");
+        }
 
-    document.getElementById("result").textContent = message;
-}
+        function multiply() 
+        {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var prod = num1 * num2;
+            printResult("The product of " + num1 + " and " + num2 + " is " + prod + ".");
+        }
+
+        function divide() 
+        {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var quot = num1 / num2;
+            printResult("The quotient of " + num1 + " and " + num2 + " is " + quot + ".");
+        }
+
+        function remainder() 
+        {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var rem = num1 % num2;
+            printResult("The remainder of " + num1 + " and " + num2 + " is " + rem + ".");
+        }
+
+        function printResult(message) 
+        {
+            document.getElementById("result").innerHTML = message;
+        }
+        
+
     </script>
