@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <h1> Calculate </h1>
+    <p> This page uses arithmetic operators to calculate the sum, difference, product, quotient and remainder of 2 numbers you enter based on the button you click.</p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"] {
+            width: 65px;
+            height: 20px;
+        }
+        input[type="button"] {
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+        }
+        #result {
+            margin-top: 10px;
+            font-family: times new roman;
+        }
+        h1 {
+            font-family: times new roman;
+        }
+        p {
+            font-family: times new roman;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <br><br>
+
+    <input type="button" value="+" onclick="calculate('sum')">
+    <input type="button" value="-" onclick="calculate('difference')">
+    <input type="button" value="*" onclick="calculate('product')">
+    <input type="button" value="/" onclick="calculate('quotient')">
+    <input type="button" value="%" onclick="calculate('remainder')">
+    <br>
+
+    <p id="result">Results will be displayed here.</p>
+
+    <script>
+        function sum(num1, num2) {
+            return num1 + num2;
+        }
+
+        function difference(num1, num2) {
+            return num1 - num2;
+        }
+
+        function product(num1, num2) {
+            return num1 * num2;
+        }
+
+        function quotient(num1, num2) {
+            return num1 / num2;
+        }
+
+        function remainder(num1, num2) {
+            return num1 % num2;
+        }
+
+        function printResult(message) {
+            document.getElementById("result").innerHTML = message;
+        }
+
+        function calculate(operation) {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            let result;
+            let opText; 
+
+            switch (operation) {
+                case 'sum':
+                    result = sum(num1, num2);
+                    opText = "sum"; 
+                    break;
+                case 'difference':
+                    result = difference(num1, num2);
+                    opText = "difference"; 
+                    break;
+                case 'product':
+                    result = product(num1, num2);
+                    opText = "product"; 
+                    break;
+                case 'quotient':
+                    result = quotient(num1, num2);
+                    opText = "quotient"; 
+                    break;
+                case 'remainder':
+                    result = remainder(num1, num2);
+                    opText = "remainder"; 
+                    break;
+                default:
+                    result = "Invalid operation";
+                    opText = "invalid operation"; 
+            }
+
+            let message = `The ${opText} of ${num1} and ${num2} is ${result}.`
+            printResult(message);
+        }
+    </script>
+
+</body>
+</html>
