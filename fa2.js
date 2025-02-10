@@ -1,48 +1,54 @@
 <script>
-        function add() 
-        {
-            var num1 = Number(document.getElementById("num1").value);
-            var num2 = Number(document.getElementById("num2").value);
-            var sum = num1 + num2;
-            printResult("The sum of " + num1 + " and " + num2 + " is " + sum + ".");
+        function add(num1, num2) {
+            return num1 + num2;
         }
 
-        function subtract() 
-        {
-            var num1 = Number(document.getElementById("num1").value);
-            var num2 = Number(document.getElementById("num2").value);
-            var diff = num1 - num2;
-            printResult("The difference of " + num1 + " and " + num2 + " is " + diff + ".");
+        function subtract(num1, num2) {
+            return num1 - num2;
         }
 
-        function multiply() 
-        {
-            var num1 = Number(document.getElementById("num1").value);
-            var num2 = Number(document.getElementById("num2").value);
-            var prod = num1 * num2;
-            printResult("The product of " + num1 + " and " + num2 + " is " + prod + ".");
+        function multiply(num1, num2) {
+            return num1 * num2;
         }
 
-        function divide() 
-        {
-            var num1 = Number(document.getElementById("num1").value);
-            var num2 = Number(document.getElementById("num2").value);
-            var quot = num1 / num2;
-            printResult("The quotient of " + num1 + " and " + num2 + " is " + quot + ".");
+        function divide(num1, num2) {
+            return num1 / num2;
         }
 
-        function remainder() 
-        {
-            var num1 = Number(document.getElementById("num1").value);
-            var num2 = Number(document.getElementById("num2").value);
-            var rem = num1 % num2;
-            printResult("The remainder of " + num1 + " and " + num2 + " is " + rem + ".");
+        function remainder(num1, num2) {
+            return num1 % num2;
         }
 
-        function printResult(message) 
-        {
+        function printResult(message) {
             document.getElementById("result").innerHTML = message;
         }
-        
 
+        function calculate(operation) {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            let result;
+
+            switch (operation) {
+                case 'add':
+                    result = add(num1, num2);
+                    break;
+                case 'subtract':
+                    result = subtract(num1, num2);
+                    break;
+                case 'multiply':
+                    result = multiply(num1, num2);
+                    break;
+                case 'divide':
+                    result = divide(num1, num2);
+                    break;
+                case 'remainder':
+                    result = remainder(num1, num2);
+                    break;
+                default:
+                    result = "Invalid operation";
+            }
+
+            let message = `The ${operation} of ${num1} and ${num2} is ${result}.`;
+            printResult(message);
+        }
     </script>
