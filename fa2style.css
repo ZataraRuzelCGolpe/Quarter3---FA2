@@ -1,5 +1,18 @@
-<style>
-    input {
-       width: 55px
+ <style>
+        body {
+            font-family: Arial, sans-serif;
         }
-</style>
+        input[type="text"] {
+            width: 55px;
+        }
+        input[type="button"] {
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 10px;
+            font-family: times new roman;
+        }
+        h1 {
+            font-family: times new roman;
+        }
+    </style>
