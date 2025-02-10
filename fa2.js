@@ -1,17 +1,17 @@
-<script>
-        function add(num1, num2) {
+  <script>
+        function sum(num1, num2) {
             return num1 + num2;
         }
 
-        function subtract(num1, num2) {
+        function difference(num1, num2) {
             return num1 - num2;
         }
 
-        function multiply(num1, num2) {
+        function product(num1, num2) {
             return num1 * num2;
         }
 
-        function divide(num1, num2) {
+        function quotient(num1, num2) {
             return num1 / num2;
         }
 
@@ -27,28 +27,35 @@
             var num1 = Number(document.getElementById("num1").value);
             var num2 = Number(document.getElementById("num2").value);
             let result;
+            let opText; 
 
             switch (operation) {
-                case 'add':
-                    result = add(num1, num2);
+                case 'sum':
+                    result = sum(num1, num2);
+                    opText = "sum"; 
                     break;
-                case 'subtract':
-                    result = subtract(num1, num2);
+                case 'difference':
+                    result = difference(num1, num2);
+                    opText = "difference"; 
                     break;
-                case 'multiply':
-                    result = multiply(num1, num2);
+                case 'product':
+                    result = product(num1, num2);
+                    opText = "product"; 
                     break;
-                case 'divide':
-                    result = divide(num1, num2);
+                case 'quotient':
+                    result = quotient(num1, num2);
+                    opText = "quotient"; 
                     break;
                 case 'remainder':
                     result = remainder(num1, num2);
+                    opText = "remainder"; 
                     break;
                 default:
                     result = "Invalid operation";
+                    opText = "invalid operation"; 
             }
 
-            let message = `The ${operation} of ${num1} and ${num2} is ${result}.`;
+            let message = `The ${opText} of ${num1} and ${num2} is ${result}.`
             printResult(message);
         }
     </script>
