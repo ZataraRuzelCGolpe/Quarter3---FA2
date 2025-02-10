@@ -1,12 +1,15 @@
- <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
         }
         input[type="text"] {
-            width: 55px;
+            width: 65px;
+            height: 20px;
         }
         input[type="button"] {
             cursor: pointer;
+            width: 25px;
+            height: 25px;
         }
         #result {
             margin-top: 10px;
@@ -14,5 +17,9 @@
         }
         h1 {
             font-family: times new roman;
+        }
+        p {
+            font-family: times new roman;
+            font-size: 18px;
         }
     </style>
