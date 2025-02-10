@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <h1> Calculate </h1>
+    <p> This page uses arithmetic operators to calculate the sum, difference, product, quotient and remainder of 2 numbers you enter based on the button you click.</p>
+    <link rel="stylesheet" type="text/css" href="css/fa2style.css">
+    <script src="fa2.js" defer></script>
+</head>
+<body>
+
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <br><br>
+
+    <input type="button" value="+" onclick="calculate('sum')">
+    <input type="button" value="-" onclick="calculate('difference')">
+    <input type="button" value="*" onclick="calculate('product')">
+    <input type="button" value="/" onclick="calculate('quotient')">
+    <input type="button" value="%" onclick="calculate('remainder')">
+    <br>
+
+    <p id="result">Results will be displayed here.</p>
+
+    
+</body>
+</html>
